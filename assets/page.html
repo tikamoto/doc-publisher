@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css">
+<title>Web Doc</title>
+<style>
+  * { padding: 0; margin: 0; }
+  html { height: 100%; }
+  body { height: 100%; }
+  .page { width: 100%; display: flex; min-height: 100vh; }
+  aside { width: 300px; background: #333; color: #fff; font-size: 14px;}
+    aside nav { position: sticky; top: 40px; margin: 40px 20px; }
+    aside h1 { font-weight: bold; font-size: 2em; margin: 20px 0; }
+    aside h2 { font-weight: bold; font-size: 1em; margin: 15px 0; background: #555; padding:5px 10px; text-align: center; border-radius: 99px; }
+    aside li { list-style-type: disc; margin-bottom: 0.5em; margin-left: 25px;}
+    aside a { color: #fff; text-decoration: none; }
+    aside a:hover { text-decoration: underline; }
+  main { height: 100%; flex: 1; background-color: #fff; }
+    main .markdown-body { color: #333; margin: 40px; }
+  .markdown-body h1 { position: relative; padding: 0.6em; background: #e0edff; }
+  .markdown-body h2 { border-bottom: solid 3px #cce4ff; position: relative; }
+  .markdown-body h2:after { position: absolute; content: " "; display: block; border-bottom: solid 3px #5472cd; bottom: -3px;width: 20%; }
+  .markdown-body h3 { background: linear-gradient(transparent 70%, #a7d6ff 70%); display: inline-block; }
+</style>
+</head>
+<body>
+    <div class="page">
+      <aside>
+        <nav>
+          <h1>Header Level 1</h1>
+          <h2>Header Level 2</h2>
+          <ul>
+            <li><a href="#">dummy</a></li>
+            <li><a href="#">dummy</a></li>
+            <li><a href="#">dummy</a></li>
+            <li><a href="#">dummy</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <section class="markdown-body">
+          <h1>Header Level 1</h1>
+          <h2>Header Level 2</h2>
+          <h3>Header Level 3</h3>
+          <h4>Header Level 4</h4>
+          <h5>Header Level 5</h5>
+          <h6>Header Level 6</h6>
+          <ul>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+          </ul>
+          <ol>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+            <li>aaaaa</li>
+          </ol>
+          <a href="./">aaaaa</a>
+          <table>
+
+          </table>
+        </section>
+      </main>
+    <script type="text/javascript">
+      document.querySelectorAll('a').forEach((e) => {
+        const href = e.getAttribute('href')
+        if (href.match(/^http(s):\/\//)) {
+          e.setAttribute('target', '_blank')
+        }
+      })
+      document.querySelectorAll('img').forEach((e) => {
+        const src = e.getAttribute('src')
+        if (src.match(/\.svg$/)) {
+          e.outerHTML = '<a href="' + src + '.html" target="_blank" style="cursor:zoom-in;">' + e.outerHTML + '</a>';
+        }
+      })
+    </script>
+</body>
+</html>

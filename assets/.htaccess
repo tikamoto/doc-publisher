@@ -1,0 +1,3 @@
+RewriteEngine On
+DirectoryIndex index.md.html
+RewriteRule .(md|csv)$ %{REQUEST_URI}.html [L]

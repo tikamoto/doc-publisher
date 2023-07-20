@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css">
+<title>Web Doc</title>
+<style>
+    * { padding: 0; margin: 0; }
+    aside { background: #333; color: #fff; position: fixed; z-index:1; width: 100%; padding:10px; font-size: 14px; }
+    aside span { background: #666; padding: 0 8px; border-radius: 5px; margin: 0 5px 0 20px; }
+    aside a { color: #333; background: #fff; padding: 0 5px; border-radius: 99px; margin-left: 20px; text-decoration: none; }
+    aside a:hover { background: #aaa; }
+    .view-area { cursor: grab; padding: 75px 25px 25px 25px; }
+</style>
+<body>
+<aside><a href="javascript:window.close();">×</a><span>ドラッグ</span>：移動<span>Ctrl + スクロール</span>：拡大/縮小</aside>
+<div class="view-area"></div>
+<script src="https://unpkg.com/panzoom@9.4.3/dist/panzoom.min.js"></script>
+<script>
+    panzoom(document.querySelector('.view-area img'),{
+        beforeWheel: function(e) {
+            var shouldIgnore = !e.ctrlKey;
+            return shouldIgnore;
+        }
+    });
+</script>
+</body>
+</html>
