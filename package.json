@@ -1,8 +1,7 @@
 {
-    "name": "docs",
+    "name": "doc-publisher",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
     "scripts": {
         "build": "ts-node scripts/build.ts",
         "deploy": "ts-node scripts/deploy.ts",
