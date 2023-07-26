@@ -1,4 +1,5 @@
 export type AppConfig = {
+    name: string,
     srcDir: string,
     distDir: string,
     server: ServerConfig

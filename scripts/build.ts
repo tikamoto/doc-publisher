@@ -49,6 +49,7 @@ const assignPageTemplate = (() => {
     })()
     return (html: string, filePath: string): string => {
         const dom = new JSDOM(template)
+        dom.window.document.title = config.name
         dom.window.document.querySelector('.markdown-body')!.innerHTML = html;
         dom.window.document.querySelectorAll('aside nav a')?.forEach((elem) => {
             const href = elem.getAttribute('href') || '';
@@ -65,6 +66,7 @@ const assignViewerTemplate = (() => {
     const template = fs.readFileSync('./assets/viewer.html', 'utf-8')
     return (imgPath: string): string => {
         const dom = new JSDOM(template)
+        dom.window.document.title = config.name
         dom.window.document.querySelector('.view-area')!.innerHTML = `<img src="${imgPath}">`;
         return dom.serialize();
     }

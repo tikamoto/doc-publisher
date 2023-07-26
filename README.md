@@ -19,6 +19,7 @@ npm install
 
 ```
 {
+  "name" : "Docs"
   "srcDir" : "./docs",
   "distDir" : "./docs_html",
   "server" : {
@@ -34,6 +35,7 @@ npm install
 
 |key|type|value|
 |:--:|:--:|:--|
+|name|string|ドキュメントの名前|
 |srcDir|string|ドキュメントのソースディレクトリ|
 |distDir|string|ビルド先のディレクトリ|
 |server|ServerConfig|デプロイサーバーの設定|
