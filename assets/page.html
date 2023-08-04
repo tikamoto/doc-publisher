@@ -15,7 +15,13 @@
     aside nav { position: sticky; top: 40px; margin: 40px 20px; }
     aside h1 { font-weight: bold; font-size: 2em; margin: 20px 0; }
     aside h2 { font-weight: bold; font-size: 1em; margin: 15px 0; background: #555; padding:5px 10px; text-align: center; border-radius: 99px; }
-    aside li { list-style-type: disc; margin-bottom: 0.5em; margin-left: 25px;}
+    aside h3 { font-weight: normal; font-size: 1em; margin:10px 0; display: flex; align-items: center; color: #aaa; }
+    aside h3:before, aside h3:after { content: ""; height: 1px; flex-grow: 1; background: #666; }
+    aside h3:before { margin-right: 1em; margin-left:1em; }
+    aside h3:after { margin-right: 1em; margin-left:1em; }
+    aside li { list-style-type: none; margin-bottom: 0.3em; margin-left: 1em; }
+    aside li:before { content: "•"; margin-right:0.5em; }
+    aside p { margin-left: 1.2em; line-height: 1.8em; }
     aside a { color: #fff; text-decoration: none; }
     aside a:hover { text-decoration: underline; }
   main { height: 100%; flex: 1; background-color: #fff; }
@@ -25,6 +31,7 @@
   .markdown-body h2:after { position: absolute; content: " "; display: block; border-bottom: solid 3px #5472cd; bottom: -3px;width: 20%; }
   .markdown-body h3 { background: linear-gradient(transparent 70%, #a7d6ff 70%); width: fit-content; }
   .markdown-body img { margin:20px 0; }
+  .markdown-body th { background:#e9edf1;}
 </style>
 </head>
 <body>
@@ -33,6 +40,7 @@
         <nav>
           <h1>Header Level 1</h1>
           <h2>Header Level 2</h2>
+          <h2>Header Level 3</h2>
           <ul>
             <li><a href="#">dummy</a></li>
             <li><a href="#">dummy</a></li>

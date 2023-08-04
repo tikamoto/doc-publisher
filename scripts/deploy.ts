@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import { NodeSSH } from 'node-ssh';
 import { question } from 'readline-sync';
 import { AppConfig } from './types';
-import { TSError } from 'ts-node';
 
 const config: AppConfig = JSON.parse(fs.readFileSync('./app.json', 'utf-8'))
 const ssh = new NodeSSH()
@@ -24,7 +23,7 @@ const main = async () => {
       })
     } catch(e:any) {
       throw new Error('❌ Could not connect server')
-    } 
+    }
 
     console.log('✔ Deploying...')
 
@@ -33,7 +32,7 @@ const main = async () => {
     ssh.dispose();
 
     console.log('✔ Deploy succeeded')
-    
+
   } catch(e:any) {
     console.log(e.message)
   }
