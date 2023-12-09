@@ -3,9 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build": "ts-node scripts/build.ts",
-        "deploy": "ts-node scripts/deploy.ts",
-        "publish" : "npm run build && npm run deploy"
+        "build": "ts-node scripts/build.ts"
     },
     "keywords": [],
     "author": "",

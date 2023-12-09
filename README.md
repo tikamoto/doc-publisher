@@ -1,11 +1,22 @@
 # Description
 
-Markdown, CSV, SVGから成るプリミティブな軽量ドキュメントを
-WEB上で参照可能なhtmlページに変換する
+Markdown, CSV, SVGから構成された軽量ドキュメントをWEB上で参照可能なhtmlページに変換します。
+
+![screenshot](./screenshot.png)
+
+# Features
+
+- Markdownファイル（.md）をhtmlに変換
+- CSVファイル（.csv）をhtmlのテーブル形式に変換
+- SVGファイル（.svg）を拡大・移動可能な画像ビューア形式に変換
+
+# Demo
+
+https://tikamoto.github.io/doc-publisher/index.md.html
 
 # Requirement
 
-- Node 18.16
+- Node >= 18.16
 
 # Installation
 
@@ -19,61 +30,32 @@ npm install
 
 ```
 {
-  "name" : "Docs"
-  "srcDir" : "./docs",
-  "distDir" : "./docs_html",
-  "server" : {
-    "host" : "<host>",
-    "port" : 22,
-    "username" : "<username>",
-    "deployTo": "<remote derectory path>"
-  }
+  "name" : "Sample Documents"
+  "srcDir" : "./docs_src",
+  "distDir" : "./docs"
 }
 ```
-
-### AppConfig
-
 |key|type|value|
 |:--:|:--:|:--|
-|name|string|ドキュメントの名前|
+|name|string|ドキュメントの名前（ビルドされたhtmlのtitle属性に反映）|
 |srcDir|string|ドキュメントのソースディレクトリ|
 |distDir|string|ビルド先のディレクトリ|
-|server|ServerConfig|デプロイサーバーの設定|
-
-### ServerConfig
-
-|key|type|value|
-|:--:|:--:|:--|
-|host|string|ホスト名|
-|port|number|SSHポート|
-|username|string|SSHユーザ名|
-|deployTo|string|デプロイ先のリモートディレクトリ|
-
 
 # Usage
 
 ### ビルド
 
-AppConfig.srcDirで指定されたディレクトリ内のドキュメントファイルをhtmlに変換し
-AppConfig.distDirで指定されたディレクトリに出力する
+`srcDir`で指定されたディレクトリ内のドキュメントファイル（md, csv, svg）をhtmlに変換し`distDir`で指定されたディレクトリに出力します。
 
 ```
 npm run build
 ```
 
-### デプロイ
+### テンプレートファイル
 
-AppConfig.distDirで指定されたディレクトリ（ビルドされたhtml）を
-ServerConfig.deployToで指定されたリモートサーバのディレクトリにデプロイする
+以下のテンプレートファイルを編集することで変換後のhtmlのスタイルを任意に変更することができます。
 
-```
-npm run deploy
-```
-
-### パブリッシュ
-
-ビルドとデプロイを両方実行するショートハンド
-
-```
-npm run publish
-```
+|テンプレート|内容|
+|:--|:--|
+|`assets/page.html`|MarkdownおよびCSVファイルのhtml変換用テンプレートファイル|
+|`assets/viewer.html`|SVGファイルの画像ビューア用テンプレートファイル|

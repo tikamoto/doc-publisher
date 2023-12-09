@@ -1,11 +1,5 @@
 {
-    "name" : "Docs",
+    "name" : "Sample Documents",
     "srcDir" : "./docs_src",
-    "distDir" : "./docs",
-    "server" : {
-        "host" : "<host>",
-        "port" : 22,
-        "username" : "<username>",
-        "deployTo": "<remote derectory path>"
-    }
+    "distDir" : "./docs"
 }
