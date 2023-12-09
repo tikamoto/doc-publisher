@@ -73,19 +73,5 @@
           </table>
         </section>
       </main>
-    <script type="text/javascript">
-      document.querySelectorAll('a').forEach((e) => {
-        const href = e.getAttribute('href')
-        if (href.match(/^http(s):\/\//)) {
-          e.setAttribute('target', '_blank')
-        }
-      })
-      document.querySelectorAll('img').forEach((e) => {
-        const src = e.getAttribute('src')
-        if (src.match(/\.svg$/)) {
-          e.outerHTML = '<a href="' + src + '.html" target="_blank" style="cursor:zoom-in;">' + e.outerHTML + '</a>';
-        }
-      })
-    </script>
 </body>
 </html>

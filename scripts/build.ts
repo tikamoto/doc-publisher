@@ -53,11 +53,22 @@ const assignPageTemplate = (() => {
         dom.window.document.querySelector('.markdown-body')!.innerHTML = html;
         dom.window.document.querySelectorAll('aside nav a')?.forEach((elem) => {
             const href = elem.getAttribute('href') || '';
-            if (href.match(/^(http|https):/)) return
+            if (href.match(/^http(s):/)) return
             const to = path.posix.join(config.distDir, decodeURI(href))
             const relativeLink = path.posix.relative(filePath, to).replace(/^..\//, './')
             elem.setAttribute('href', encodeURI(relativeLink))
         })
+        dom.window.document.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href?.match(/^http(s):/)) a.setAttribute('target', '_blank')
+            if (href?.match(/^.\/(.*).(md|csv)$/)) a.setAttribute('href', href + '.html');
+        });
+        dom.window.document.querySelectorAll('img').forEach(img => {
+            const src = img.getAttribute('src');
+            if (src?.match(/^.\/(.*).(svg)$/)) {
+                img.outerHTML = '<a href="' + src + '.html" target="_blank" style="cursor:zoom-in;">' + img.outerHTML + '</a>';
+            }
+        });
         return dom.serialize();
     }
 })()
