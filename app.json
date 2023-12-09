@@ -1,7 +1,7 @@
 {
     "name" : "Docs",
-    "srcDir" : "./docs",
-    "distDir" : "./docs_html_demo",
+    "srcDir" : "./docs_src",
+    "distDir" : "./docs",
     "server" : {
         "host" : "<host>",
         "port" : 22,
