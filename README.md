@@ -14,6 +14,8 @@ https://tikamoto.github.io/doc-publisher/index.md.html
 
 ![screenshot](./screenshot.png)
 
+※変換元のファイル ⇒ [docs_src](./docs_src/)
+
 # Requirement
 
 - Node >= 18.16
