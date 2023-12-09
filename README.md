@@ -2,8 +2,6 @@
 
 Markdown, CSV, SVGから構成された軽量ドキュメントをWEB上で参照可能なhtmlページに変換します。
 
-![screenshot](./screenshot.png)
-
 # Features
 
 - Markdownファイル（.md）をhtmlに変換
@@ -13,6 +11,8 @@ Markdown, CSV, SVGから構成された軽量ドキュメントをWEB上で参�
 # Demo
 
 https://tikamoto.github.io/doc-publisher/index.md.html
+
+![screenshot](./screenshot.png)
 
 # Requirement
 
@@ -45,17 +45,21 @@ npm install
 
 ### ビルド
 
-`srcDir`で指定されたディレクトリ内のドキュメントファイル（md, csv, svg）をhtmlに変換し`distDir`で指定されたディレクトリに出力します。
-
 ```
 npm run build
 ```
 
+`srcDir`で指定されたディレクトリ内のドキュメントファイル（md, csv, svg）をhtmlに変換し`distDir`で指定されたディレクトリに出力します。
+
 ### テンプレートファイル
 
-以下のテンプレートファイルを編集することで変換後のhtmlのスタイルを任意に変更することができます。
+テンプレートファイルを編集することで変換後のhtmlのスタイルを任意に変更することができます。
 
 |テンプレート|内容|
 |:--|:--|
 |`assets/page.html`|MarkdownおよびCSVファイルのhtml変換用テンプレートファイル|
 |`assets/viewer.html`|SVGファイルの画像ビューア用テンプレートファイル|
+
+### 目次
+
+`srcDir`直下のindex.mdが目次として使用され、変換後のhtmlの左サイドメニュー表示に反映されます。
